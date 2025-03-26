@@ -65,20 +65,22 @@ int length(struct node *H)
 }
 
 
-void revdisplay(struct node *H){
-  struct node *s =H ;
-    while (s->next!=NULL){
-         s =s->next;
-     }
-     printf("Reversed Linked list: ");
-    while (s!=NULL){        
-         printf("%d " , s->data);
-         s = s->prev ;
-
-    }
-
-    printf("\n");
+void revdisplay(struct node *H) {
+ if (!H) return; 
+ 
+ struct node *s = H->prev; 
+ printf("Reversed Linked list: ");
+ 
+ struct node *temp = s; 
+ do {
+     printf("%d ", s->data);
+     s = s->prev;
+ } while (s != temp);  
+ 
+ printf("\n");
 }
+
+
 struct node *insert(struct node *H, int x, int pos)
 {
     struct node *t = newnode;
