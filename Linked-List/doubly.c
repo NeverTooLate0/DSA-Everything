@@ -98,7 +98,7 @@ struct node *insert(struct node *H, int x, int pos)
             s = s->next;
         }
 
-       if (pos<i+1){
+       if (pos<l+1){
 
         t->next = s->next;
         t->prev = s;
