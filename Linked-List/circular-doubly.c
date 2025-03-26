@@ -48,6 +48,8 @@ void display(struct node *H)
     printf("\n");
 }
 
+
+
 int length(struct node *H)
 {
     struct node *s = H;
@@ -62,6 +64,21 @@ int length(struct node *H)
     return l;
 }
 
+
+void revdisplay(struct node *H){
+  struct node *s =H ;
+    while (s->next!=NULL){
+         s =s->next;
+     }
+     printf("Reversed Linked list: ");
+    while (s!=NULL){        
+         printf("%d " , s->data);
+         s = s->prev ;
+
+    }
+
+    printf("\n");
+}
 struct node *insert(struct node *H, int x, int pos)
 {
     struct node *t = newnode;
@@ -144,14 +161,15 @@ int main()
     struct node *H = NULL;
     while (1)
     {
-        printf("Menu\n");
-        printf("1. Create\n");
-        printf("2. Display\n");
-        printf("3. Length\n");
-        printf("4. Insert\n");
-        printf("5. Delete\n");
-        printf("6. Erase\n");
-        printf("7. Exit\n");
+            printf("Menu\n");
+            printf("1. Create\n");
+            printf("2. reverse output\n");
+            printf("3. Display\n");
+            printf("4. Length\n");
+            printf("5. Insert\n");
+            printf("6. Delete\n");
+            printf("7. Erase\n");
+            printf("8. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &ch);
         switch (ch)
@@ -161,14 +179,17 @@ int main()
             scanf("%d", &n);
             H = create(H, n);
             break;
-        case 2:
-            display(H);
+             case 2:
+               revdisplay(H);
             break;
         case 3:
+            display(H);
+            break;
+        case 4:
             l = length(H);
             printf("Length of list: %d\n", l);
             break;
-        case 4:
+        case 5:
             printf("Enter the position to insert the data: ");
             scanf("%d", &pos);
             l = length(H);
@@ -183,7 +204,7 @@ int main()
                 H = insert(H, x, pos);
             }
             break;
-        case 5:
+        case 6:
             printf("Enter position to delete data: ");
             scanf("%d", &pos);
             l = length(H);
@@ -196,7 +217,7 @@ int main()
                 H = deleteNode(H, pos);
             }
             break;
-        case 6:
+        case 7:
             H = erase(H);
             printf("Linked list erased.\n");
             break;
