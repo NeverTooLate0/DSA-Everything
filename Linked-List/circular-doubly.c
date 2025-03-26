@@ -221,7 +221,7 @@ int main()
             H = erase(H);
             printf("Linked list erased.\n");
             break;
-        case 7:
+        case 8:
             exit(0);
         default:
             printf("Enter correct choice!\n");
