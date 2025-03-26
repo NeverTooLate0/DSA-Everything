@@ -110,7 +110,7 @@ struct node *insert(struct node *H, int x, int pos)
     }
 
     return H;
-}
+}}
 
 struct node *deleteNode(struct node *H, int pos)
 {
