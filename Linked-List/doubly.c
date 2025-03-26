@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -52,14 +51,14 @@ void revdisplay(struct node *H){
     while (s->next!=NULL){
          s =s->next;
      }
-    while (s!=NULL){
-
-         printf("%d" , s->data);
+     printf("Reversed Linked list: ");
+    while (s!=NULL){        
+         printf("%d " , s->data);
          s = s->prev ;
 
     }
 
-
+    printf("\n");
 }
 
 int length(struct node *H)
@@ -89,30 +88,36 @@ struct node *insert(struct node *H, int x, int pos)
     if (pos == 1)
     {
         t->next = H;
+        if (H != NULL)
             H->prev = t;
-             H = t;
+        H = t;
     }
     else
     {
-        for (i = 1; i < pos - 1 ; i++)
+        for (i = 1; i < pos - 1 && s != NULL; i++)
         {
             s = s->next;
         }
 
-       if (pos < l + 1 ){
-            t->next = s->next;
-            t->prev = s;
+        if (s == NULL)
+        {
+            printf("Invalid position!\n");
+            free(t);
+            return H;
+        }
+
+        t->next = s->next;
+        t->prev = s;
+        
+        if (s->next != NULL)
             s->next->prev = t;
-            s->next = t;
-       }else{
-        s->next=t ;
-        t->prev=s;
-       }
+
+        s->next = t;
     }
 
     return H;
 }
-/*
+
 struct node *deleteNode(struct node *H, int pos)
 {
  struct node *s, *t;
@@ -138,15 +143,14 @@ struct node *deleteNode(struct node *H, int pos)
    free(t);
 
   }
+  else {
+    s->next=NULL;
+    free(t);
  }
- else {
-  s->next=NULL;
-  free(t);
-
 }
 return H;
 }
-*/
+
 struct node *erase(struct node *H)
 {
  struct node *s;
@@ -209,7 +213,7 @@ int main()
     H = insert(H, x, pos);
    }
    break;
-   /*
+   
   case 6:
    printf("Enter position to delete data: ");
    scanf("%d", &pos);
@@ -223,7 +227,6 @@ int main()
     H = deleteNode(H, pos);
    }
    break;
-   */
   case 7:
    H = erase(H);
    printf("Linked list erased.\n");
