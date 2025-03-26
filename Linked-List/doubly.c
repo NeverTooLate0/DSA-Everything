@@ -88,31 +88,25 @@ struct node *insert(struct node *H, int x, int pos)
     if (pos == 1)
     {
         t->next = H;
-        if (H != NULL)
-            H->prev = t;
+        H->prev = t;
         H = t;
     }
     else
     {
-        for (i = 1; i < pos - 1 && s != NULL; i++)
+        for (i = 1; i < pos - 1 ; i++)
         {
             s = s->next;
         }
 
-        if (s == NULL)
-        {
-            printf("Invalid position!\n");
-            free(t);
-            return H;
-        }
+       if (pos<i+1){
 
         t->next = s->next;
         t->prev = s;
-        
-        if (s->next != NULL)
-            s->next->prev = t;
-
+        s->next->prev = t;
         s->next = t;
+    }else{
+        s->next=t;
+        t->prev=s;
     }
 
     return H;
