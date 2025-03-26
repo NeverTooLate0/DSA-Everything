@@ -106,7 +106,7 @@ struct node *deleteNode(struct node *H, int pos)
 struct node *erase(struct node *H)
 {
  struct node *s;
- while (s!= NULL)
+ while (H!= NULL)
  {
   s = H;
   H = H->next;
