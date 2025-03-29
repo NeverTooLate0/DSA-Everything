@@ -26,13 +26,12 @@ void s_sort(int a[], int n) {
                 minIndex = j;
             }
         }
-        // Swap only if a new minimum is found
+        // Swap 
             t = a[minIndex];
             a[minIndex] = a[i];
             a[i] = t;
         }
     }
-}
 
 int main() {
     int a[10], n; 
