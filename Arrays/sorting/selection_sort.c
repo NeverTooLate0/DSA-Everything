@@ -27,7 +27,6 @@ void s_sort(int a[], int n) {
             }
         }
         // Swap only if a new minimum is found
-        if (minIndex != i) {
             t = a[minIndex];
             a[minIndex] = a[i];
             a[i] = t;
