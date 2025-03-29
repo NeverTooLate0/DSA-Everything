@@ -14,7 +14,8 @@ void display(int a[], int n) {
 }
 
 void i_sort(int arr[], int n) {  
-    for (int i = 1; i < n; i++) {
+    int i ;
+    for ( i = 1; i < n; i++) {
         int key = arr[i]; 
         int j = i - 1;
 
