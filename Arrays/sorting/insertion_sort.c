@@ -9,7 +9,7 @@ void accept(int a[], int n) {
 
 void display(int a[], int n) {
     for (int i = 0; i < n; i++) {
-        printf("%d\n", a[i]);
+        printf("%d ", a[i]);
     }
 }
 
@@ -36,12 +36,14 @@ int main() {
 
     accept(a, n);
     
-    printf("Unsorted elements:\n");
+    printf("Unsorted elements: ");
     display(a, n);
     
     i_sort(a, n); 
+    printf("\n");
+
     
-    printf("Sorted elements:\n");
+    printf("Sorted elements: ");
     display(a, n);
 
     return 0;
