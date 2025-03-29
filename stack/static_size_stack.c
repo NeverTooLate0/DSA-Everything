@@ -19,30 +19,28 @@ int is_full() {
 }
 
 void push(int data) {
-    if (!is_full()) {
+    
         stack[++top] = data;
-    } else {
-        printf("Stack is full \n");
-    }
 }
 
 int pop() {
-    if (!is_empty()) {
+   
         return stack[top--];
-    } else {
-        printf("Stack is already empty \n");
-        return -1;  // Indicating error
-    }
+      
 }
 
 int peep() {
+   
+        return top ;
+    
+    }
+/*int peep() {
     if (!is_empty()) {
         return stack[top]; // Returning the top element instead of the index
     } else {
         printf("Stack is empty!\n");
         return -1;
-    }
-}
+    }*/
 
 int main() {
     int ch, data;
