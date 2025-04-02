@@ -36,9 +36,8 @@ struct node *create(struct node *H, int n)
 
 void display(struct node *H)
 {
-    struct node *s = H;
-    if (!H)
-        return;
+    struct node *s ;
+    s= H;
     printf("Linked list: ");
     do
     {
@@ -83,13 +82,9 @@ void revdisplay(struct node *H) {
 
 struct node *insert(struct node *H, int x, int pos)
 {
-    struct node *t = newnode;
+    struct node *t;
+    t=newnode;
     t->data = x;
-    if (!H)
-    {
-        t->next = t->prev = t;
-        return t;
-    }
     int l = length(H);
     struct node *s = H;
     if (pos == 1)
@@ -114,8 +109,7 @@ struct node *insert(struct node *H, int x, int pos)
 
 struct node *deleteNode(struct node *H, int pos)
 {
-    if (!H)
-        return NULL;
+
     struct node *s = H;
     int l = length(H);
     if (pos == 1)
@@ -144,8 +138,6 @@ struct node *deleteNode(struct node *H, int pos)
 
 struct node *erase(struct node *H)
 {
-    if (!H)
-        return NULL;
     struct node *s = H->next;
     while (s != H)
     {
