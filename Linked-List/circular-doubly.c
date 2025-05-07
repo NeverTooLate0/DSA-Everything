@@ -109,6 +109,7 @@ struct node *deleteNode(struct node *H, int pos)
 
     struct node *s = H;
     int l = length(H);
+     int i ; 
     if (pos == 1)
     {
         if (H->next == H)
