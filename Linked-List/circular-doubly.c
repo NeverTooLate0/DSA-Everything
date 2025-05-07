@@ -67,11 +67,11 @@ void revdisplay(struct node *H) {
  struct node *s = H->prev; 
  printf("Reversed Linked list: ");
  
- struct node *temp = s; 
+ struct node *t = s; 
  do {
      printf("%d ", s->data);
      s = s->prev;
- } while (s != temp);  
+ } while (s != t);  
  
  printf("\n");
 }
