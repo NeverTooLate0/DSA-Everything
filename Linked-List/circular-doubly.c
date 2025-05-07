@@ -53,8 +53,6 @@ int length(struct node *H)
 {
     struct node *s = H;
     int l = 0;
-    if (!H)
-        return 0;
     do
     {
         l++;
@@ -65,7 +63,6 @@ int length(struct node *H)
 
 
 void revdisplay(struct node *H) {
- if (!H) return; 
  
  struct node *s = H->prev; 
  printf("Reversed Linked list: ");
