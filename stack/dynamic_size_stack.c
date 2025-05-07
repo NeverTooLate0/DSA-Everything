@@ -26,7 +26,7 @@ void push(int data)
         if(H==NULL)
         {
             H=top=s;
-            top=s;
+         
         }
         else
         {
