@@ -22,14 +22,14 @@ struct node *create(struct node *H, int n)
     s = H;
     for (i = 1; i < n; i++)
     {
-        struct node *t = newnode;
-        printf("Enter data: ");
-        scanf("%d", &t->data);
-        t->next = H;
-        t->prev = s;
-        s->next = t;
-        H->prev = t;
-        s = t;
+      
+         s->next = newnode ; 
+         s->next->prev=s ;
+         s=s->next; 
+         printf("Enter data: ");
+         scanf("%d", &s->data);
+         s->next=H ; 
+         H->prev=s ;
     }
     return H;
 }
